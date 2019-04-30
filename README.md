@@ -4,6 +4,9 @@ This library is designed spefically for Angular Material projects with plans to 
 ## Install
 
 npm install wh-inline-editor
+ 
+#### app.module.ts
+import { WhInlineEditorModule } from 'wh-inline-editor';
 
 ## Sample Usage
 
