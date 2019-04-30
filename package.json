@@ -1,8 +1,30 @@
 {
   "name": "wh-inline-editor",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "author": "Eric Hurt",
+  "description": "Simple wrapper that gives a visual upgrade helpful for form heavy applications or input heavy grids.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wheater/Inline-Editor.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "material",
+    "inline",
+    "editor",
+    "angular-material",
+    "inline-editor",
+    "input-wrapper"
+  ],
   "peerDependencies": {
     "@angular/common": "^7.0.0",
     "@angular/core": "^7.0.0"
+  },
+  "scripts": {
+    "transpile": "ngc",
+    "package": "rollup -c",
+    "minify": "uglifyjs dist/bundles/amazing.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/amazing.umd.min.js",
+    "build": "npm run transpile && npm run package && npm run minify"
   }
 }

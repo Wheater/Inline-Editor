@@ -1,24 +1,71 @@
-# WhInlineEditor
+# Wheat House Inline Editor
+This library is designed spefically for Angular Material projects with plans to remove the Angular Material specification at a future date. Simple wrapper that gives a visual upgrade helpful for form heavy applications or input heavy grids.
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+## Install
 
-## Code scaffolding
+npm install wh-inline-editor
+ 
+#### app.module.ts
 
-Run `ng generate component component-name --project wh-inline-editor` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project wh-inline-editor`.
-> Note: Don't forget to add `--project wh-inline-editor` or else it will be added to the default project in your `angular.json` file. 
+import { WhInlineEditorModule } from 'wh-inline-editor';
 
-## Build
+## Sample Usage
 
-Run `ng build wh-inline-editor` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Basic Wrapper
+```
 
-## Publishing
+<wh-inline-editor [model]="testForm.get('name').value" elementReference="name">
+  <mat-form-field>
+    <input matInput formControlName="name" placeholder="Name" id="name" />
+  </mat-form-field>
+</wh-inline-editor>
 
-After building your library with `ng build wh-inline-editor`, go to the dist folder `cd dist/wh-inline-editor` and run `npm publish`.
+```
 
-## Running unit tests
+### Mat-Select
+```
 
-Run `ng test wh-inline-editor` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<wh-inline-editor [model]="form.get('option').value" [matSelect]="select" elementReference="select">
+  <mat-form-field>
+    <mat-select #select formControlName="option" id="select">
+      <mat-option value="A">A</mat-option>
+      <mat-option value="B">B</mat-option>
+      <mat-option value="C">C</mat-option>
+    </mat-select>
+  </mat-form-field>
+</wh-inline-editor>
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Mat-Datepicker + Pipe
+```
+
+<wh-inline-editor [(model)]="model.date" elementReference="datepickerInput" 
+                  [datepicker]="picker" [pipe]="datePipe" pipeArgs="dd/MM/yyyy">
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" id="datepickerInput" [(ngModel)]="templateDrivenFormsModel.date" 
+           placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker id="picker"></mat-datepicker>
+  </mat-form-field>
+</wh-inline-editor>
+
+```
+
+## Input Parameters
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| model | any | The value reference of the input wrapped |
+| elementReference | string | Id of input element wrapped |
+| classList  | string[] | List of classes to apply to wrapper |
+| pipe | Pipe | Optional pipe to apply to span text |
+| pipeArgs | any | Pipe options to apply to pipe parameter |
+| editEventType | string | 'click' or 'doubleClick' |
+| defaultText | string | Default text to appear if wrapper has empty input |
+| showEditButton | boolean | Show edit icon while |
+| datepicker | MatDatepicker<Date> | Reference to MatDatepicker |
+| matSelect | MatSelect | Reference to MatSelect |
+
+## License
+
+MIT
