@@ -8,6 +8,7 @@ npm install wh-inline-editor
 ## Sample Usage
 
 ### Basic Wrapper
+```
 
 <wh-inline-editor [model]="testForm.get('name').value" elementReference="name">
   <mat-form-field>
@@ -15,7 +16,10 @@ npm install wh-inline-editor
   </mat-form-field>
 </wh-inline-editor>
 
+```
+
 ### Mat-Select
+```
 
 <wh-inline-editor [model]="form.get('option').value" [matSelect]="select" elementReference="select">
   <mat-form-field>
@@ -27,7 +31,10 @@ npm install wh-inline-editor
   </mat-form-field>
 </wh-inline-editor>
 
+```
+
 ### Mat-Datepicker + Pipe
+```
 
 <wh-inline-editor [(model)]="model.date" elementReference="datepickerInput" 
                   [datepicker]="picker" [pipe]="datePipe" pipeArgs="dd/MM/yyyy">
@@ -38,6 +45,8 @@ npm install wh-inline-editor
     <mat-datepicker #picker id="picker"></mat-datepicker>
   </mat-form-field>
 </wh-inline-editor>
+
+```
 
 ## Input Parameters
 | Parameter | Type | Description |
