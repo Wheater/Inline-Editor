@@ -1,0 +1,17 @@
+.inline-label {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.ng-content-container {
+  padding: 8px;
+}
+
+.inline-label:hover {
+  background-color: #eeeeee;
+}
+
+mat-icon {
+  cursor: pointer;
+}
+

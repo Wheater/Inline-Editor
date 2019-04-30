@@ -1,0 +1,7 @@
+<span *ngIf="!editing" (click)="clickEvent('click')" (dblclick)="clickEvent('doubleClick')" [ngClass]="classList || ['mat-form-field', 'inline-label']">
+  {{ pipe && model ? (model | dynamicPipe: pipe:pipeArgs) : model || defaultText }}
+  <mat-icon *ngIf="showEditButton && !editing" matSuffix (click)="clickEvent(editEventType)">mode_edit</mat-icon>
+</span>
+<span [hidden]="!editing" class="ng-content-container" (keyup.enter)="editing = false;" #wrapper contenteditable="true">
+  <ng-content></ng-content>
+</span>
