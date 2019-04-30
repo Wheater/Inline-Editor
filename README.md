@@ -56,7 +56,7 @@ npm install wh-inline-editor
 | classList  | string[] | List of classes to apply to wrapper |
 | pipe | Pipe | Optional pipe to apply to span text |
 | pipeArgs | any | Pipe options to apply to pipe parameter |
-| editEventType | string | 'Click' or 'Double-click' |
+| editEventType | string | 'click' or 'doubleClick' |
 | defaultText | string | Default text to appear if wrapper has empty input |
 | showEditButton | boolean | Show edit icon while |
 | datepicker | MatDatepicker<Date> | Reference to MatDatepicker |
